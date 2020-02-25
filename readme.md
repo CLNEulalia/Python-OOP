@@ -259,7 +259,7 @@ first class, like **IPhone** and **AndroidPhone**.
 
 When we say sub-classes, or child classes, `inherit` methods and properties from
 a parent class we mean the child class has access to all of the functionality of
-it's parent, and it can define it's own functionality on top of that.
+its parent, and it can define its own functionality on top of that.
 
 When we define a class to represent a **Phone** we can add the basic properties
 and functionality that all phones have.
@@ -453,6 +453,7 @@ class BankAccount():
         elif amount <= 0:
             return False
         else:
+            self.balance -= amount
             return amount
 
     def deposit(self, amount):
