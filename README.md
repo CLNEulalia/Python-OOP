@@ -349,52 +349,6 @@ Note how we pass in the `phone_number` parameter to `super().__init__()`.
 This gives `phone_number` a value, like setting a variable. Now we're able to
 access `self.phone_number` in the Android class, and it's already been set!
 
-### What are Dunder Methods (Magic Methods)?
-
-> Dunder is short-hand for *d*ouble *under*score.
-
-We've seen one dunder method before, `__init__`, which is called whenever you
-create an instance of a class. These methods are invoked by Python when you use
-a built-in method. For example the `__str__` dunder method is called whenever we
-use the `str()` function on an instance of the class. Let's see what that looks
-like:
-
-```py
-class Dog:
-    def __init__(self, name):
-        self.name = name
-        self.good_dog = True
-
-    def __str__(self):
-        return self.name
-
-
-maddie = Dog('Maddie')
-print(str(maddie)) # Maddie
-print(maddie) # Maddie
-```
-
-We can also think of the `__str__` method as useful to _describe_ a class
-instance. What happens if we don't have one and we try to `print(maddie)`?
-
-We'll see something like this:
-
-```py
-<__main__.Dog object at 0x7f7561eee198>
-```
-
-Other useful dunder methods include:
-
-- `__getattr__` for when you get an attribute (i.e. `maddie.name`)
-- `__setattr__` for when you get an attribute (i.e. `maddie.name = 'Madison'`)
-- `__len__` for when you call `len` on the class
-- `__add__` for when you add instances of the class
-- `__getitem__` for using bracket notation on an instance of the class (i.e.
-  `maddie['food']`)
-
-Such dunder methods exist for **_almost every operator_**!
-[More examples here](https://dbader.org/blog/python-dunder-methods).
-
 ## You do: Write Bank Account Classes
 
 > 20 min exercise, 20 min review
@@ -545,6 +499,52 @@ class OverdraftAccount(BankAccount):
 ```
 
 </details>
+
+### What are Dunder Methods (Magic Methods)?
+
+> Dunder is short-hand for *d*ouble *under*score.
+
+We've seen one dunder method before, `__init__`, which is called whenever you
+create an instance of a class. These methods are invoked by Python when you use
+a built-in method. For example the `__str__` dunder method is called whenever we
+use the `str()` function on an instance of the class. Let's see what that looks
+like:
+
+```py
+class Dog:
+    def __init__(self, name):
+        self.name = name
+        self.good_dog = True
+
+    def __str__(self):
+        return self.name
+
+
+maddie = Dog('Maddie')
+print(str(maddie)) # Maddie
+print(maddie) # Maddie
+```
+
+We can also think of the `__str__` method as useful to _describe_ a class
+instance. What happens if we don't have one and we try to `print(maddie)`?
+
+We'll see something like this:
+
+```py
+<__main__.Dog object at 0x7f7561eee198>
+```
+
+Other useful dunder methods include:
+
+- `__getattr__` for when you get an attribute (i.e. `maddie.name`)
+- `__setattr__` for when you get an attribute (i.e. `maddie.name = 'Madison'`)
+- `__len__` for when you call `len` on the class
+- `__add__` for when you add instances of the class
+- `__getitem__` for using bracket notation on an instance of the class (i.e.
+  `maddie['food']`)
+
+Such dunder methods exist for **_almost every operator_**!
+[More examples here](https://dbader.org/blog/python-dunder-methods).
 
 ### Exercise: Fancy Bank Accounts (feat. Magic Methods)
 
