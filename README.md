@@ -226,9 +226,10 @@ class BankAccount:
 
     def withdraw(self, amount):
         net_balance = self.balance - amount - self.overdraft_fees
-        self.balance -= amount if net_balance >= -100 else 0
         if net_balance < -100:
             return 'Insufficient Funds'
+        else:
+            self.balance -= amount
         if self.balance < 0:
             self.overdraft_fees += 20
         return amount
