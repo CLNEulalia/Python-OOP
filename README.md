@@ -545,7 +545,7 @@ Other useful dunder methods include:
   `maddie['food']`)
 
 Such dunder methods exist for **_almost every operator_**!
-[More examples here](https://dbader.org/blog/python-dunder-methods).
+[More examples here](https://www.python-course.eu/python3_magic_methods.php).
 
 ### Exercise: Fancy Bank Accounts (feat. Magic Methods)
 
